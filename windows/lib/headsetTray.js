@@ -10,6 +10,13 @@ const executeMediaKey = (win, key) => {
   `);
 };
 
+const likeClick = (win) => {
+  logger('Liking song');
+  win.webContents.executeJavaScript(`
+    window.likeClick()
+  `);
+};
+
 module.exports = (tray, win, player) => {
   logger('Setting tray');
 
@@ -26,6 +33,8 @@ module.exports = (tray, win, player) => {
     { label: 'Play/Pause', click: () => { executeMediaKey(win, 'play-pause'); } },
     { label: 'Next', click: () => { executeMediaKey(win, 'play-next'); } },
     { label: 'Previous', click: () => { executeMediaKey(win, 'play-previous'); } },
+    { type: 'separator' },
+    { label: 'Like', click: () => { likeClick(win); } },
     { type: 'separator' },
     { role: 'quit' },
   ]);
