@@ -10,7 +10,7 @@ const executeMediaKey = (win, key) => {
   `);
 };
 
-const likeClick = (win) => {
+const executeLikeClick = (win) => {
   logger('Liking song');
   win.webContents.executeJavaScript(`
     window.likeClick()
@@ -34,7 +34,7 @@ module.exports = (tray, win, player) => {
     { label: 'Next', click: () => { executeMediaKey(win, 'play-next'); } },
     { label: 'Previous', click: () => { executeMediaKey(win, 'play-previous'); } },
     { type: 'separator' },
-    { label: 'Like', click: () => { likeClick(win); } },
+    { label: 'Like', click: () => { executeLikeClick(win); } },
     { type: 'separator' },
     { role: 'quit' },
   ]);
