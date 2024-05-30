@@ -25,10 +25,10 @@
     "headset-autoupdater": "0.0.1"
   },
   "devDependencies": {
-    "electron": "^1.8.4",
-    "electron-installer-windows": "^1.1.0",
-    "electron-packager": "^12.0.1",
+    "electron": "^30.0.9",
+    "electron-installer-windows": "^1.1.1",
+    "electron-packager": "^17.1.2",
     "foreman": "lightboard/node-foreman",
-    "http-server": "^0.11.1"
+    "http-server": "^14.1.1"
   }
 }
